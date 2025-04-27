@@ -11,7 +11,7 @@ public class SimulationMap {
     private final int height;
     private final Map<Coordinates, Entity> map;
 
-    public SimulationMap(int width, int height) {
+    protected SimulationMap(int width, int height) {
         this.width = width;
         this.height = height;
         this.map = new HashMap<>();
