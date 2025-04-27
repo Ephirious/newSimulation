@@ -23,20 +23,47 @@ public class SimulationMap {
 
     public void add(Coordinates coordinates, Entity entity) {
         validateCoordinates(coordinates);
+        checkAbsence(coordinates);
         map.put(coordinates, entity);
     }
 
     public void remove(Coordinates coordinates) {
         validateCoordinates(coordinates);
+        checkingAvailability(coordinates);
         map.remove(coordinates);
+    }
+
+    public Entity get(Coordinates coordinates) {
+        validateCoordinates(coordinates);
+        checkingAvailability(coordinates);
+        return map.get(coordinates);
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     public void validateCoordinates(Coordinates coordinates) {
         final boolean isRowInvalid = !(coordinates.row() >= 0 && coordinates.row() < height);
         final boolean isColumnInvalid = !(coordinates.column() >= 0 && coordinates.column() < width);
-
         if (isRowInvalid || isColumnInvalid) {
             throw new IllegalArgumentException("SimulationMap: coordinates " + coordinates + " invalid");
+        }
+    }
+
+    private void checkingAvailability(Coordinates coordinates) {
+        if (!hasEntity(coordinates)) {
+            throw new IllegalArgumentException("SimulationMap: map hasn't entity by " + coordinates);
+        }
+    }
+
+    private void checkAbsence(Coordinates coordinates) {
+        if (hasEntity(coordinates)) {
+            throw new IllegalArgumentException("SimulationMap: map already has entity by " + coordinates);
         }
     }
 }
