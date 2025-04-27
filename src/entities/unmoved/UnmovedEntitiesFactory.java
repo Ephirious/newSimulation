@@ -4,10 +4,6 @@ import entities.Entity;
 import entities.EntityFactory;
 
 public class UnmovedEntitiesFactory implements EntityFactory {
-    public enum UnmovedEntityType {
-        ROCK, TREE, GRASS;
-    }
-
     private final UnmovedEntityType type;
 
     public UnmovedEntitiesFactory(UnmovedEntityType type) {
