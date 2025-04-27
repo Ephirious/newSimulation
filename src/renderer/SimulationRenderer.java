@@ -6,7 +6,7 @@ import simulationmap.SimulationMap;
 import util.sprites.SpriteFactory;
 import util.sprites.Sprites;
 
-public class SimulationRenderer {
+public class SimulationRenderer implements Renderer {
     private final SimulationMap worldMap;
     private final Sprites sprites;
 
