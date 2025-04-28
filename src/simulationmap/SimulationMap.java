@@ -9,34 +9,34 @@ import java.util.Map;
 public class SimulationMap {
     private final int width;
     private final int height;
-    private final Map<Coordinates, Entity> map;
+    private final Map<Coordinates, Entity> entities;
 
     protected SimulationMap(int width, int height) {
         this.width = width;
         this.height = height;
-        this.map = new HashMap<>();
+        this.entities = new HashMap<>();
     }
 
     public boolean hasEntity(Coordinates coordinates) {
-        return map.containsKey(coordinates);
+        return entities.containsKey(coordinates);
     }
 
     public void add(Coordinates coordinates, Entity entity) {
         validateCoordinates(coordinates);
         checkAbsence(coordinates);
-        map.put(coordinates, entity);
+        entities.put(coordinates, entity);
     }
 
     public void remove(Coordinates coordinates) {
         validateCoordinates(coordinates);
         checkingAvailability(coordinates);
-        map.remove(coordinates);
+        entities.remove(coordinates);
     }
 
     public Entity get(Coordinates coordinates) {
         validateCoordinates(coordinates);
         checkingAvailability(coordinates);
-        return map.get(coordinates);
+        return entities.get(coordinates);
     }
 
     public int getWidth() {
@@ -57,13 +57,13 @@ public class SimulationMap {
 
     private void checkingAvailability(Coordinates coordinates) {
         if (!hasEntity(coordinates)) {
-            throw new IllegalArgumentException("SimulationMap: map hasn't entity by " + coordinates);
+            throw new IllegalArgumentException("SimulationMap: worldMap hasn't entity by " + coordinates);
         }
     }
 
     private void checkAbsence(Coordinates coordinates) {
         if (hasEntity(coordinates)) {
-            throw new IllegalArgumentException("SimulationMap: map already has entity by " + coordinates);
+            throw new IllegalArgumentException("SimulationMap: worldMap already has entity by " + coordinates);
         }
     }
 }
