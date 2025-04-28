@@ -15,6 +15,6 @@ public class HerbivoreFactory implements EntityFactory {
 
     @Override
     public Entity create() {
-        return new Creature(healthPoints, speed);
+        return new Herbivore(healthPoints, speed);
     }
 }
