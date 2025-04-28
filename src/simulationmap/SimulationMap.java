@@ -4,6 +4,8 @@ import coordinates.Coordinates;
 import entities.Entity;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class SimulationMap {
@@ -45,6 +47,19 @@ public class SimulationMap {
 
     public int getHeight() {
         return height;
+    }
+
+    public <T extends Entity> List<T> getEntitiesByType(Class<T> clazz) {
+        List<T> result = new LinkedList<>();
+
+        for (Coordinates currentCoordinates : entities.keySet()) {
+            Entity currentEntity = entities.get(currentCoordinates);
+            if (clazz.isInstance(currentEntity)) {
+                result.add(((T) currentEntity));
+            }
+        }
+
+        return result;
     }
 
     public boolean isValid(Coordinates coordinates) {
