@@ -16,7 +16,7 @@ public class Sprites {
     }
 
     public String getSprite(Class<? extends Entity> clazz) {
-        if (!mapOfSprites.containsKey(clazz)) {
+        if (!hasSprites(clazz)) {
             throw new IllegalArgumentException("Hasn't sprite for " + clazz.getSimpleName() + " class");
         }
 
