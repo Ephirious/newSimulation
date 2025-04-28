@@ -7,12 +7,16 @@ import util.sprites.SpriteFactory;
 import util.sprites.Sprites;
 
 public class SimulationRenderer implements Renderer {
-    private final SimulationMap worldMap;
+    private SimulationMap worldMap;
     private final Sprites sprites;
 
-    public SimulationRenderer(SimulationMap worldMap) {
-        this.worldMap = worldMap;
+    public SimulationRenderer() {
         this.sprites = SpriteFactory.getDefaultSprites();
+    }
+
+    @Override
+    public void setWorldMap(SimulationMap worldMap) {
+        this.worldMap = worldMap;
     }
 
     public void render() {
