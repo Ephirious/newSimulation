@@ -1,10 +1,14 @@
 package simulationmap;
 
 public class MediumMapFactory extends AbstractMapFactory {
+    private static final int WIDTH = 20;
+    private static final int HEIGHT = 20;
+
+
     @Override
     public SimulationMap createMap() {
-        int width = 20;
-        int height = 20;
-        return new SimulationMap(width, height);
+        SimulationMap worldMap = new SimulationMap(WIDTH, HEIGHT);
+        placeEntity(worldMap);
+        return worldMap;
     }
 }
