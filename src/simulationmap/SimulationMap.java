@@ -47,10 +47,15 @@ public class SimulationMap {
         return height;
     }
 
+    public boolean isValid(Coordinates coordinates) {
+        final boolean isRowValid = (coordinates.row() >= 0 && coordinates.row() < height);
+        final boolean isColumnValid = (coordinates.column() >= 0 && coordinates.column() < width);
+
+        return isRowValid && isColumnValid;
+    }
+
     public void validateCoordinates(Coordinates coordinates) {
-        final boolean isRowInvalid = !(coordinates.row() >= 0 && coordinates.row() < height);
-        final boolean isColumnInvalid = !(coordinates.column() >= 0 && coordinates.column() < width);
-        if (isRowInvalid || isColumnInvalid) {
+        if (!isValid(coordinates)) {
             throw new IllegalArgumentException("SimulationMap: coordinates " + coordinates + " invalid");
         }
     }
