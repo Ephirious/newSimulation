@@ -1,6 +1,7 @@
 package util.map;
 
 import coordinates.Coordinates;
+import entities.Entity;
 import simulationmap.SimulationMap;
 
 import java.util.Random;
@@ -21,5 +22,14 @@ public class SimulationMapUtils {
         } while (worldMap.hasEntity(freeCoordinates));
 
         return freeCoordinates;
+    }
+
+    public static void moveEntity(SimulationMap worldMap, Coordinates from, Coordinates to) {
+        worldMap.checkingAvailability(from);
+        worldMap.checkAbsence(to);
+
+        Entity movedEntity = worldMap.get(from);
+        worldMap.remove(from);
+        worldMap.add(to, movedEntity);
     }
 }

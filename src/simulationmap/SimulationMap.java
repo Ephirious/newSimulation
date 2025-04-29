@@ -85,13 +85,13 @@ public class SimulationMap {
         }
     }
 
-    private void checkingAvailability(Coordinates coordinates) {
+    public void checkingAvailability(Coordinates coordinates) {
         if (!hasEntity(coordinates)) {
             throw new IllegalArgumentException("SimulationMap: worldMap hasn't entity by " + coordinates);
         }
     }
 
-    private void checkAbsence(Coordinates coordinates) {
+    public void checkAbsence(Coordinates coordinates) {
         if (hasEntity(coordinates)) {
             throw new IllegalArgumentException("SimulationMap: worldMap already has entity by " + coordinates);
         }
