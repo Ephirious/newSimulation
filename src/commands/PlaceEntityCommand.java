@@ -18,9 +18,8 @@ public class PlaceEntityCommand extends AbstractCommandMap {
 
     @Override
     public void execute() {
-        Entity createdEntity = factory.create();
-
         for (int i = 0; i < countEntities; i++) {
+            Entity createdEntity = factory.create();
             Coordinates placedCoordinates = SimulationMapUtils.getFreeCoordinates(worldMap);
             worldMap.add(placedCoordinates, createdEntity);
         }
