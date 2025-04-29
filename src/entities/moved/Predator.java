@@ -7,8 +7,7 @@ public class Predator extends Creature {
     private final Damage damage;
 
     protected Predator(int healthPoints, Speed speed, Damage damage) {
-        super(healthPoints, speed);
+        super(healthPoints, speed, Herbivore.class);
         this.damage = damage;
-        target = Herbivore.class;
     }
 }

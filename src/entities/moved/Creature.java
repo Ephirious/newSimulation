@@ -9,11 +9,15 @@ public abstract class Creature extends Entity {
 
     private final int healthPoints;
     private final Speed speed;
+    private final Class<? extends Entity> target;
 
-    protected Class<? extends Entity> target;
-
-    protected Creature(int healthPoints, Speed speed) {
+    public Creature(int healthPoints, Speed speed, Class<? extends Entity> target) {
         this.healthPoints = healthPoints;
         this.speed = speed;
+        this.target = target;
+    }
+
+    public Class<? extends Entity> getTarget() {
+        return target;
     }
 }
