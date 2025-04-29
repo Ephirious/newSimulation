@@ -62,6 +62,16 @@ public class SimulationMap {
         return result;
     }
 
+    public Coordinates getEntityCoordinates(Entity entity) {
+        for (Map.Entry<Coordinates, Entity> entry : entities.entrySet()) {
+            if (entry.getValue() == entity) {
+                return entry.getKey();
+            }
+        }
+
+        throw new IllegalArgumentException("SimulationMap: worldMap hasn't entity " + entity);
+    }
+
     public boolean isValid(Coordinates coordinates) {
         final boolean isRowValid = (coordinates.row() >= 0 && coordinates.row() < height);
         final boolean isColumnValid = (coordinates.column() >= 0 && coordinates.column() < width);
