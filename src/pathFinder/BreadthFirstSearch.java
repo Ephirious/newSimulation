@@ -26,13 +26,15 @@ public class BreadthFirstSearch extends PathFinder {
         while (!coordinatesToCheck.isEmpty()) {
             Coordinates current = coordinatesToCheck.poll();
 
-            if (worldMap.get(current).getClass() == target) {
-                targetCoordinates = current;
-                break;
+            if (worldMap.hasEntity(current)) {
+                if (worldMap.get(current).getClass() == target) {
+                    targetCoordinates = current;
+                    break;
+                }
+                if (!current.equals(source)) {
+                    continue;
+                }
             }
-
-            if (worldMap.hasEntity(current) && !current.equals(source))
-                continue;
 
             List<Coordinates> neighboringCoordinates = CoordinatesUtils.getNeighboringCoordinates(current);
             neighboringCoordinates.removeIf(coordinates -> !worldMap.isValid(coordinates));

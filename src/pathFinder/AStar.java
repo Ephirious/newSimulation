@@ -2,6 +2,7 @@ package pathFinder;
 
 import coordinates.Coordinates;
 import entities.Entity;
+import simulationmap.SimulationMap;
 import util.coordinates.CoordinatesUtils;
 
 import java.util.*;
@@ -12,7 +13,7 @@ public class AStar extends PathFinder {
     private final int capacity;
     private final Map<Coordinates, Integer> costsForCoordinates;
 
-    public AStar(simulationmap.SimulationMap worldMap) {
+    public AStar(SimulationMap worldMap) {
         super(worldMap);
 
         capacity = (worldMap.getWidth() - 1) * (worldMap.getHeight() - 1);
@@ -31,8 +32,8 @@ public class AStar extends PathFinder {
 
             final boolean isNewPathLessThanMinPath = !path.isEmpty() && path.size() < minPathSize;
             if (isNewPathLessThanMinPath) {
-                resultPath = path;
                 minPathSize = path.size();
+                resultPath = path;
             }
         }
 
@@ -41,8 +42,9 @@ public class AStar extends PathFinder {
 
     public List<Coordinates> findPathToTarget(Coordinates source, Coordinates target) {
         worldMap.validateCoordinates(source);
+        worldMap.validateCoordinates(target);
 
-        Queue<Coordinates> coordinatesToCheck = new PriorityQueue<>(capacity, getComparator(targetCoordinates));
+        Queue<Coordinates> coordinatesToCheck = new PriorityQueue<>(capacity, getComparator(target));
 
         addStep(source, START_COORDINATE);
         costsForCoordinates.put(source, COST_FOR_MOVE);
