@@ -23,6 +23,13 @@ public class SimulationInformation {
         countPredators = worldMap.getEntitiesByType(Predator.class).size();
     }
 
+    public void reset() {
+        countTurns = 0;
+        countGrass = 0;
+        countHerbivores = 0;
+        countPredators = 0;
+    }
+
     public int getCountTurns() {
         return countTurns;
     }

@@ -54,7 +54,7 @@ public class Simulation {
     public void restart() {
         worldMap.clear();
         initCommands.forEach(Command::execute);
-        information.update();
+        information.reset();
         isPause = false;
     }
 
