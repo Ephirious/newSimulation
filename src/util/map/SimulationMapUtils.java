@@ -24,9 +24,14 @@ public class SimulationMapUtils {
         return freeCoordinates;
     }
 
-    public static void moveEntity(SimulationMap worldMap, Coordinates from, Coordinates to) {
+    public static void moveEntity(SimulationMap worldMap, Coordinates from, Coordinates to, boolean isTargetRemove) {
         worldMap.checkingAvailability(from);
-        worldMap.checkAbsence(to);
+
+        if (isTargetRemove) {
+            worldMap.remove(to);
+        } else {
+            worldMap.checkAbsence(to);
+        }
 
         Entity movedEntity = worldMap.get(from);
         worldMap.remove(from);
