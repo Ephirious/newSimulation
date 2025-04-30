@@ -3,20 +3,15 @@ package renderer;
 import coordinates.Coordinates;
 import entities.Entity;
 import simulationmap.SimulationMap;
-import util.sprites.SpriteFactory;
 import util.sprites.Sprites;
 
 public class SimulationRenderer implements Renderer {
-    private SimulationMap worldMap;
+    private final SimulationMap worldMap;
     private final Sprites sprites;
 
-    public SimulationRenderer() {
-        this.sprites = SpriteFactory.getDefaultSprites();
-    }
-
-    @Override
-    public void setWorldMap(SimulationMap worldMap) {
+    public SimulationRenderer(SimulationMap worldMap, Sprites sprites) {
         this.worldMap = worldMap;
+        this.sprites = sprites;
     }
 
     public void render() {
