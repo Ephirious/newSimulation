@@ -1,4 +1,4 @@
-package simulationmap;
+package simulation_map;
 
 public class MediumMapFactory extends AbstractMapFactory {
     private static final int WIDTH = 20;

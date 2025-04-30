@@ -1,4 +1,4 @@
-package simulationmap;
+package simulation_map;
 
 import coordinates.Coordinates;
 import entities.Entity;

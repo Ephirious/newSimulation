@@ -2,7 +2,7 @@ package entities.moved;
 
 import entities.Entity;
 import entities.EntityFactory;
-import pathFinder.PathFinder;
+import path_finder.PathFinder;
 import util.enums.Speed;
 
 public class HerbivoreFactory implements EntityFactory {

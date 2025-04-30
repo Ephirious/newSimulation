@@ -1,7 +1,7 @@
 package commands;
 
 import entities.moved.Creature;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.List;
 

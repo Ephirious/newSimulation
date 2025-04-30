@@ -3,7 +3,7 @@ package commands;
 import coordinates.Coordinates;
 import entities.Entity;
 import entities.EntityFactory;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.function.Supplier;
 

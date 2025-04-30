@@ -4,7 +4,7 @@ import commands.Command;
 import commands.PlaceEntityCommand;
 import coordinates.Coordinates;
 import entities.Entity;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 import util.coordinates.CoordinatesUtils;
 
 import java.util.List;

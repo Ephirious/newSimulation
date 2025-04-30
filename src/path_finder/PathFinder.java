@@ -1,8 +1,8 @@
-package pathFinder;
+package path_finder;
 
 import coordinates.Coordinates;
 import entities.Entity;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.HashMap;
 import java.util.LinkedList;

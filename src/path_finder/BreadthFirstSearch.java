@@ -1,4 +1,4 @@
-package pathFinder;
+package path_finder;
 
 import coordinates.Coordinates;
 import entities.Entity;
@@ -11,7 +11,7 @@ import java.util.Queue;
 public class BreadthFirstSearch extends PathFinder {
     private final Queue<Coordinates> coordinatesToCheck;
 
-    public BreadthFirstSearch(simulationmap.SimulationMap map) {
+    public BreadthFirstSearch(simulation_map.SimulationMap map) {
         super(map);
         coordinatesToCheck = new LinkedList<>();
     }

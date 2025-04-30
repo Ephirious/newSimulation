@@ -2,8 +2,8 @@ package entities.moved;
 
 import coordinates.Coordinates;
 import entities.unmoved.Grass;
-import pathFinder.PathFinder;
-import simulationmap.SimulationMap;
+import path_finder.PathFinder;
+import simulation_map.SimulationMap;
 import util.enums.Speed;
 import util.map.SimulationMapUtils;
 

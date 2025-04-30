@@ -1,6 +1,6 @@
 package commands;
 
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 public abstract class AbstractCommandMap implements Command {
     protected final SimulationMap worldMap;

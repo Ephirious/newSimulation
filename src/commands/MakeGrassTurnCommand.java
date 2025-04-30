@@ -2,7 +2,7 @@ package commands;
 
 import coordinates.Coordinates;
 import entities.unmoved.Grass;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.List;
 

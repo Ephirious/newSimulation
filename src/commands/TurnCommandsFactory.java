@@ -1,6 +1,6 @@
 package commands;
 
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.LinkedList;
 import java.util.List;

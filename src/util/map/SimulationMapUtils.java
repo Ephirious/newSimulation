@@ -2,7 +2,7 @@ package util.map;
 
 import coordinates.Coordinates;
 import entities.Entity;
-import simulationmap.SimulationMap;
+import simulation_map.SimulationMap;
 
 import java.util.Random;
 

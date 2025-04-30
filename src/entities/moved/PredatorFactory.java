@@ -2,7 +2,7 @@ package entities.moved;
 
 import entities.Entity;
 import entities.EntityFactory;
-import pathFinder.PathFinder;
+import path_finder.PathFinder;
 import util.enums.Damage;
 import util.enums.Speed;
 
