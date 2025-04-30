@@ -41,6 +41,10 @@ public class SimulationMap {
         return entities.get(coordinates);
     }
 
+    public void clear() {
+        entities.clear();
+    }
+
     public int getWidth() {
         return width;
     }
