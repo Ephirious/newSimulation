@@ -40,7 +40,7 @@ public class Simulation {
     }
 
     public void nextTurn() {
-        while (!isPause) {
+        while (!isClosed && !isPause) {
             information.update();
 
             renderer.render();
