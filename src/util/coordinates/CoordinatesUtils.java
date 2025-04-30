@@ -23,4 +23,18 @@ public class CoordinatesUtils {
 
         return neighboringCoordinates;
     }
+
+    public static List<Coordinates> getAroundCoordinates(Coordinates currentCoordinates) {
+        List<Coordinates> aroundCoordinates = getNeighboringCoordinates(currentCoordinates);
+
+        int row = currentCoordinates.row();
+        int col = currentCoordinates.column();
+
+        aroundCoordinates.add(new Coordinates(row + 1, col + 1));
+        aroundCoordinates.add(new Coordinates(row + 1, col - 1));
+        aroundCoordinates.add(new Coordinates(row - 1, col + 1));
+        aroundCoordinates.add(new Coordinates(row - 1, col - 1));
+
+        return aroundCoordinates;
+    }
 }
