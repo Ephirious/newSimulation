@@ -4,14 +4,17 @@ import coordinates.Coordinates;
 import entities.Entity;
 import entities.EntityFactory;
 import simulationmap.SimulationMap;
-import util.map.SimulationMapUtils;
+
+import java.util.function.Supplier;
 
 public class PlaceEntityCommand extends AbstractCommandMap {
     private final int countEntities;
     private final EntityFactory factory;
+    private final Supplier<Coordinates> coordinatesSupplier;
 
-    public PlaceEntityCommand(SimulationMap worldMap, int countEntities, EntityFactory factory) {
+    public PlaceEntityCommand(SimulationMap worldMap, Supplier<Coordinates> coordinatesSupplier, int countEntities, EntityFactory factory) {
         super(worldMap);
+        this.coordinatesSupplier = coordinatesSupplier;
         this.countEntities = countEntities;
         this.factory = factory;
     }
@@ -20,7 +23,7 @@ public class PlaceEntityCommand extends AbstractCommandMap {
     public void execute() {
         for (int i = 0; i < countEntities; i++) {
             Entity createdEntity = factory.create();
-            Coordinates placedCoordinates = SimulationMapUtils.getFreeCoordinates(worldMap);
+            Coordinates placedCoordinates = coordinatesSupplier.get();
             worldMap.add(placedCoordinates, createdEntity);
         }
     }
