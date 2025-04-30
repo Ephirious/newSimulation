@@ -1,5 +1,7 @@
-package commands;
+package commands.factories;
 
+import commands.Command;
+import commands.place.PlaceEntityCommand;
 import entities.moved.Creature;
 import entities.moved.HerbivoreFactory;
 import entities.moved.PredatorFactory;

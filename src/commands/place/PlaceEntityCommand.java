@@ -1,5 +1,6 @@
-package commands;
+package commands.place;
 
+import commands.turns.AbstractCommandMap;
 import coordinates.Coordinates;
 import entities.Entity;
 import entities.EntityFactory;

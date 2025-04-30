@@ -1,4 +1,4 @@
-package commands;
+package commands.turns;
 
 import coordinates.Coordinates;
 import entities.unmoved.Grass;

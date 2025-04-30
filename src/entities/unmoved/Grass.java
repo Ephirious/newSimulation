@@ -1,7 +1,7 @@
 package entities.unmoved;
 
 import commands.Command;
-import commands.PlaceEntityCommand;
+import commands.place.PlaceEntityCommand;
 import coordinates.Coordinates;
 import entities.Entity;
 import simulation_map.SimulationMap;

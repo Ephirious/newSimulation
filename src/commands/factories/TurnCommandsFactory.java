@@ -1,5 +1,8 @@
-package commands;
+package commands.factories;
 
+import commands.Command;
+import commands.turns.MakeGrassTurnCommand;
+import commands.turns.MoveCreaturesCommand;
 import simulation_map.SimulationMap;
 
 import java.util.LinkedList;

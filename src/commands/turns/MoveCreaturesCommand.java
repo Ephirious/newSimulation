@@ -1,4 +1,4 @@
-package commands;
+package commands.turns;
 
 import entities.moved.Creature;
 import simulation_map.SimulationMap;
