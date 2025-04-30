@@ -7,8 +7,6 @@ public class MediumMapFactory extends AbstractMapFactory {
 
     @Override
     public SimulationMap createMap() {
-        SimulationMap worldMap = new SimulationMap(WIDTH, HEIGHT);
-        placeEntity(worldMap);
-        return worldMap;
+        return new SimulationMap(WIDTH, HEIGHT);
     }
 }
