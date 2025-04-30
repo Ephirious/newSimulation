@@ -16,7 +16,11 @@ public enum Damage {
     }
 
     public static Damage getRandomDamage() {
-        return values()[damageRandomizer.nextInt(values().length)];
+        Damage[] damages = values();
+        int countDamages = damages.length;
+        int numberOfDamage = damageRandomizer.nextInt(countDamages);
+
+        return damages[numberOfDamage];
     }
 
     public int getDamageWithinBoundaries() {

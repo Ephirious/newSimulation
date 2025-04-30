@@ -50,7 +50,8 @@ public class SimulationRenderer implements Renderer {
 
                 if (worldMap.hasEntity(currentCoordinates)) {
                     Entity renderignEntity = worldMap.get(currentCoordinates);
-                    currentSprite = sprites.getSprite(renderignEntity.getClass());
+                    Class<? extends Entity> renderingClass = renderignEntity.getClass();
+                    currentSprite = sprites.getSprite(renderingClass);
                 } else {
                     currentSprite = spriteForVoid;
                 }

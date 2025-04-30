@@ -77,13 +77,15 @@ public abstract class Creature extends Entity {
     }
 
     private void moveIfPathMoreThanSpeed(SimulationMap worldMap, Coordinates from, List<Coordinates> path) {
-        int coordinatesIndexInPath = speed.getSpeed() - 1;
+        int indexDifferenceBetweenSpeedAndPath = 1;
+        int coordinatesIndexInPath = speed.getSpeed() - indexDifferenceBetweenSpeedAndPath;
         Coordinates target = path.get(coordinatesIndexInPath);
         SimulationMapUtils.moveEntity(worldMap, from, target, false);
     }
 
     private void moveIfPathLessOrEqualSpeed(SimulationMap worldMap, Coordinates from, List<Coordinates> path) {
-        int coordinatesIndexInPath = path.size() - 2;
+        int indexDifferenceBetweenSpeedAndPath = 2;
+        int coordinatesIndexInPath = path.size() - indexDifferenceBetweenSpeedAndPath;
         Coordinates target = path.get(coordinatesIndexInPath);
         SimulationMapUtils.moveEntity(worldMap, from, target, false);
     }
@@ -94,7 +96,8 @@ public abstract class Creature extends Entity {
 
         if (!shifts.isEmpty()) {
             Random randomizer = new Random();
-            int index = randomizer.nextInt(shifts.size());
+            int bound = shifts.size();
+            int index = randomizer.nextInt(bound);
             Coordinates newCoordinates = shifts.get(index);
             SimulationMapUtils.moveEntity(worldMap, from, newCoordinates, false);
         }
