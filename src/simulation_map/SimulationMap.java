@@ -23,6 +23,16 @@ public class SimulationMap {
         return entities.containsKey(coordinates);
     }
 
+    public boolean hasEntity(Entity entity) {
+        for (Map.Entry<Coordinates, Entity> entry : entities.entrySet()) {
+            if (entry.getValue() == entity) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void add(Coordinates coordinates, Entity entity) {
         validateCoordinates(coordinates);
         checkAbsence(coordinates);

@@ -21,6 +21,7 @@ public class Predator extends Creature {
 
         int reducedHealthPointValue = damage.getDamageWithinBoundaries();
         eatenHerbivore.decreaseHealthPoints(reducedHealthPointValue);
+        increaseHealthPoints(reducedHealthPointValue);
 
         if (eatenHerbivore.getHealthPoints() <= Creature.MIN_HP) {
             Coordinates currentCoordinates = worldMap.getEntityCoordinates(this);

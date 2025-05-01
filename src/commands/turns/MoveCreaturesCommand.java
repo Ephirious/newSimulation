@@ -1,5 +1,6 @@
 package commands.turns;
 
+import coordinates.Coordinates;
 import entities.moved.Creature;
 import simulation_map.SimulationMap;
 
@@ -16,6 +17,11 @@ public class MoveCreaturesCommand extends AbstractCommandMap {
         for (Creature current : creatures) {
             if (current.getHealthPoints() > Creature.MIN_HP) {
                 current.move(worldMap);
+            } else {
+                if (worldMap.hasEntity(current)) {
+                    Coordinates currentCreaturesCoordinates = worldMap.getEntityCoordinates(current);
+                    worldMap.remove(currentCreaturesCoordinates);
+                }
             }
         }
     }

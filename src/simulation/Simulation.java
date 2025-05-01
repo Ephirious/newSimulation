@@ -29,6 +29,7 @@ public class Simulation {
         this.turnCommands = turnCommands;
 
         this.readerKeysThread = new Thread(new KeyReader(this));
+        this.readerKeysThread.setDaemon(true);
     }
 
     public void startSimulation() {
